@@ -1,24 +1,24 @@
-import java.util.HashSet;
 import java.util.Iterator;
-import java.util.Set;
 
 public class ControleAcervo {
-    public static int contarTotalLivrosBiblioteca(Biblioteca biblioteca) {
-        int quantidade = biblioteca.getLivros().size();
+
+    public static Integer contarLivrosAlugadosBiblioteca(Biblioteca biblioteca) {
+        int quantidade = 0;
+        for (Livro livro : biblioteca) {
+            if (livro.isAlugado()) {
+                quantidade++;
+            }
+        }
         return quantidade;
     }
 
-    public static int contarTotalLivrosAlugadosBiblioteca(Biblioteca biblioteca) {
-        Set<Livro> livrosAlugados = new HashSet<>();
-
-        for (Livro livro : biblioteca) {
-            if (livro.isAlugado()) {
-                livrosAlugados.add(livro);
-            }
+    public static Integer contarTotalLivrosBiblioteca(Biblioteca biblioteca) {
+        int quantidade = 0;
+        for (Iterator l = biblioteca.iterator(); l.hasNext(); ) {
+            quantidade++;
+            l.next();
         }
-
-        return livrosAlugados.size();
+        return quantidade;
     }
+
 }
-
-

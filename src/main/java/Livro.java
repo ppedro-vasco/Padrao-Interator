@@ -1,32 +1,36 @@
 public class Livro {
 
-    int id;
+    private int id;
     private String titulo;
     private boolean alugado;
 
-    public Livro(int id, String titulo, boolean alugado){
+    public Livro(int id, String titulo, boolean alugado) {
         this.id = id;
         this.titulo = titulo;
         this.alugado = alugado;
     }
 
-    public int getId() {
+    public int getId(){
         return id;
     }
-    public void setId(int id) {
+
+    public void setId(int id){
         this.id = id;
     }
-    public String getTitulo(){
+
+    public String getTitulo() {
         return titulo;
     }
-    public void setTitulo(String titulo){
+
+    public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
 
-    public boolean isAlugado(){
+    public boolean isAlugado() {
         return alugado;
     }
-    public void setAlugado(){
+
+    public void setAlugado(boolean alugado) {
         this.alugado = alugado;
     }
 }
